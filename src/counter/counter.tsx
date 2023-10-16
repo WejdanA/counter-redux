@@ -1,7 +1,16 @@
 import { increment, decrement, rest } from "./counterSlice";
 import { useSelector, useDispatch } from "react-redux";
+
+// interface MyState {
+//   name: string;
+//   initialState: { count: number };
+//   reducers: {increment:():number=>}
+// }
+
 export const Counter = () => {
-  const counterVlaue = useSelector((state) => state.counter.count);
+  const counterVlaue = useSelector((state: { counter: { count: number } }) => {
+    return state.counter.count;
+  });
   const dispatch = useDispatch();
   const incrementHandle = () => {
     dispatch(increment());
