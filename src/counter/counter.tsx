@@ -2,12 +2,6 @@ import { increment, decrement, rest } from "./counterSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../store.ts";
 
-// interface MyState {
-//   name: string;
-//   initialState: { count: number };
-//   reducers: {increment:():number=>}
-// }
-
 export const Counter = () => {
   const counterVlaue = useSelector((state: RootState) => {
     return state.counter.count;
